@@ -100,10 +100,22 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+	if (n === 0 || n === 1) {
+		return Boolean(n);
+	}
+	return powerOfTwo(n / 2);
+
 };
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+	var results = '';
+	if (string.length === 1) {
+		return string;
+	} else {
+		results = results.concat(string[string.length - 1]);
+	}
+	return results.concat(reverse(string.substring(0, string.length - 1)));
 };
 
 // 10. Write a function that determines if a string is a palindrome.
